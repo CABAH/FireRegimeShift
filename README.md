@@ -1,5 +1,5 @@
 # Pleistocene establishment of an Anthropogenic fire regime in Australia’s tropical savannas
-<img align="right" src="www/PARchar and MARspac.png" alt="MARSPAC versus PARchar" width="380" style="margin-top: 20px">
+<img align="right" src="www/PARchar and MARspac.png" alt="MARSPAC versus PARchar" width="480" style="margin-top: 20px">
 
 Hypothesis test of shifting fire intensity from 'natural' to 'anthropogenic' fire regime in the Late Pleistocene of Sahul 
 
