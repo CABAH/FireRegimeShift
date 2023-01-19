@@ -10,7 +10,7 @@ Prof <a href="https://globalecologyflinders.com/people/#DIRECTOR">Corey J. A. Br
 January 2023 <br>
 <a href=mailto:corey.bradshaw@flinders.edu.au>e-mail</a> <br>
 <br>
-contributors: <a href="https://research.jcu.edu.au/portfolio/michael.bird">Michael Bird</a>; <a href="https://research.jcu.edu.au/portfolio/cassandra.rowe/">Cassie Rowe</a>
+contributors: <a href="https://research.jcu.edu.au/portfolio/michael.bird">Michael Bird</a>; <a href="https://research.jcu.edu.au/portfolio/cassandra.rowe/">Cassandra Rowe</a>
 
 Code and data accompany paper:
 
