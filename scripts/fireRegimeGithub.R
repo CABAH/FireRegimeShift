@@ -36,17 +36,17 @@ head(d2ctoc.dat)
 plot(d2ctoc.dat$d2c, d2ctoc.dat$toc, pch=19, cex=0.2, xlab="distance to coast", ylab="TOC")
 
 # spacmar vs. charpar
-spacmar.intp <- approx(x=spacmar$age, y=spacmar$SPACMAR, xout=agest)
-charpar.intp <- approx(x=charpar$age, y=charpar$charpar, xout=agest)
-spacmarcharpar.dat <- na.omit(data.frame(spacmar.intp,charpar.intp$y))
+spacmar.intp <- approx(x=spacmar$age, y=spacmar$SPACMAR, xout=agest, ties="mean")
+charpar.intp <- approx(x=charpar$age, y=charpar$charpar, xout=agest, ties="mean")
+spacmarcharpar.dat <- data.frame(spacmar.intp,charpar.intp$y)
 colnames(spacmarcharpar.dat) <- c("age","spacmar","charpar")
 head(spacmarcharpar.dat)
 plot(spacmarcharpar.dat$spacmar, spacmarcharpar.dat$charpar, pch=19, cex=0.2, xlab="SPAC MAR", ylab="char PAR")
 
 # pcC4 vs. spacC13
-pcC4.intp <- approx(x=pcC4$age, y=pcC4$pcC4, xout=agest)
-spacC13.intp <- approx(x=spacC13$age, y=spacC13$SPACC13, xout=agest)
-pcC4spacC13.dat <- na.omit(data.frame(pcC4.intp,spacC13.intp$y))
+pcC4.intp <- approx(x=pcC4$age, y=pcC4$pcC4, xout=agest, ties="mean")
+spacC13.intp <- approx(x=spacC13$age, y=spacC13$SPACC13, xout=agest, ties="mean")
+pcC4spacC13.dat <- data.frame(pcC4.intp,spacC13.intp$y)
 colnames(pcC4spacC13.dat) <- c("age","pcC4","spac13")
 head(pcC4spacC13.dat)
 plot(pcC4spacC13.dat$pcC4, pcC4spacC13.dat$spac13, pch=19, cex=0.2, xlab="SPAC MAR", ylab="char PAR")
