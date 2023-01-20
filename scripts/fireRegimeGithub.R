@@ -50,7 +50,22 @@ pcC4spacC13.dat <- data.frame(pcC4.intp,spacC13.intp$y)
 colnames(pcC4spacC13.dat) <- c("age","pcC4","spac13")
 head(pcC4spacC13.dat)
 plot(pcC4spacC13.dat$pcC4, pcC4spacC13.dat$spac13, pch=19, cex=0.2, xlab="SPAC MAR", ylab="char PAR")
-write.table(pcC4spacC13.dat, "pcC4spacC13.csv", sep=",")
+
+# standardised time series ratios
+spacmarcharpar.dat$spacmarsc <- scale(spacmarcharpar.dat$spacmar, center=T, scale=T)
+spacmarcharpar.dat$charparsc <- scale(spacmarcharpar.dat$charpar, center=T, scale=T)
+spacmarcharpar.dat$RmarSCparSC <- spacmarcharpar.dat$spacmarsc/spacmarcharpar.dat$charparsc
+plot(spacmarcharpar.dat$age, spacmarcharpar.dat$RmarSCparSC, type="l")
+spacmarcharpar.dat$SCRmarpar <- scale(spacmarcharpar.dat$spacmar/spacmarcharpar.dat$charpar, center=T, scale=T)
+plot(spacmarcharpar.dat$age, spacmarcharpar.dat$SCRmarpar, type="l")
+write.table(spacmarcharpar.dat, "spacmarcharpar.csv", sep=",")
+
+pcC4spacC13.dat$pcC4sc <- scale(pcC4spacC13.dat$pcC4, center=T, scale=T)
+pcC4spacC13.dat$spac13sc <- scale(pcC4spacC13.dat$spac13, center=T, scale=T)
+pcC4spacC13.dat$R13SC14SC <- pcC4spacC13.dat$spac13sc/pcC4spacC13.dat$pcC4sc
+plot(pcC4spacC13.dat$age, pcC4spacC13.dat$R13SC14SC, type="l")
+pcC4spacC13.dat$SCR1314 <- scale(pcC4spacC13.dat$spac13/pcC4spacC13.dat$pcC4, center=T, scale=T)
+plot(pcC4spacC13.dat$age, pcC4spacC13.dat$SCR1314, type="l")
 
 # split by pre and post 30 ka
 # pcC4 vs. spacC13
