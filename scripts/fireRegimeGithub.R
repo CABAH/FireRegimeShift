@@ -115,11 +115,11 @@ for (i in 1:iter) {
 sum(corRan)/iter
 
 
-## only 'wet' periods (> 10% total organic carbon)
+## only 'wet' periods (> 2% total organic carbon)
 comb.dat <- na.omit(data.frame(d2c.intp,toc.intp$y, spacmar.intp$y, charpar.intp$y, pcC4.intp$y, spacC13.intp$y))
 colnames(comb.dat) <- c("age","d2c","toc","spacmar","charpar","pcC4","spacC13")
 head(comb.dat)
-combwet <- subset(comb.dat, toc > 10)  
+combwet <- subset(comb.dat, toc > 2)  
 combwetyoung <- subset(combwet, age < 30000)  
 combwetold <- subset(combwet, age >= 30000)  
 
@@ -226,12 +226,12 @@ par(mfrow=c(1,1))
 
 ## temporal split sensitivity analysis
 iter <- 10000
-tsplit.thresh.vec <- seq(50000,10000,-5000)
+tsplit.thresh.vec <- seq(65000,10000,-1000)
 
 pr.ran1 <- pr.ran2 <- rep(NA,length(tsplit.thresh.vec))
 
 for (t in 1:length(tsplit.thresh.vec)) {
-  combwet <- subset(comb.dat, toc > 10)  
+  combwet <- subset(comb.dat, toc > 2)  
   combwetyoung <- subset(combwet, age < tsplit.thresh.vec[t])  
   combwetold <- subset(combwet, age >= tsplit.thresh.vec[t])  
   
